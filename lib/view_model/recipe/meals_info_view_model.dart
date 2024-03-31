@@ -15,6 +15,7 @@ class MealsInfoViewModel extends ChangeNotifier{
   TextEditingController search = TextEditingController();
   List<Meals> searchMealData = <Meals>[];
   List<Meals> filterMealData = <Meals>[];
+  List<Meals> mealInfoData = <Meals>[];
 
   Future<List<Meals>> getSearchMealInfo(BuildContext context) async{
     try{
@@ -95,4 +96,43 @@ class MealsInfoViewModel extends ChangeNotifier{
     Navigator.pop(context);
     return filterMealData;
   }
+
+  Future<List<Meals>> getMealInfo(BuildContext context,String id) async{
+    mealInfoData.clear();
+    showDialog(
+      barrierDismissible: false,
+      context: context, 
+      builder: (context) {
+        return Center(
+          child: SpinKitFadingCube(
+            itemBuilder: (context, index) {
+              return DecoratedBox(
+                decoration: BoxDecoration(
+                  color: (index%2==0)? AppColor.primaryColor : AppColor.secondaryColor,
+                )
+              );
+            },
+          )
+        );
+      },
+    );
+    try{
+      var response = await http.get(Uri.parse('${appUrls.mealInfoUrl}$id'));
+      if(response.statusCode == 200){
+        var data = jsonDecode(response.body.toString())['meals'];
+        for(var values in data){
+          mealInfoData.add(Meals.fromJson(values));
+        }
+        notifyListeners();
+        Navigator.pop(context);
+        return mealInfoData;
+      }
+    }
+    catch(error){
+      debugPrint(error.toString());
+    }
+    Navigator.pop(context);
+    return mealInfoData;
+  }
+  
 }

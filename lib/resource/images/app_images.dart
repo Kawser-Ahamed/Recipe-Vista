@@ -6,4 +6,5 @@ class AppImages{
   static String malaysia = "assets/images/flag/malaysian.jpg";
   static String thailand = "assets/images/flag/thailand.jpg";
   static String filter = "assets/images/filter.jpg";
+  static String youtubeLogo = "assets/images/youtube_logo.png";
 }

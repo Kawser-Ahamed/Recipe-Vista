@@ -5,7 +5,7 @@ class MealInfoModel {
 
   MealInfoModel({meals});
 
-  MealInfoModel.fromJson(Map<String, dynamic> json) {
+  MealInfoModel.fromJson(Map<dynamic, dynamic> json) {
     if (json['meals'] != dynamic) {
       meals = <Meals>[];
       json['meals'].forEach((v) {
@@ -14,8 +14,8 @@ class MealInfoModel {
     }
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  <String, dynamic>{};
+  Map<dynamic, dynamic> toJson() {
+    final Map<dynamic, dynamic> data =  <dynamic, dynamic>{};
     // ignore: unrelated_type_equality_checks
     if (meals != dynamic) {
       data['meals'] = meals!.map((v) => v.toJson()).toList();
@@ -25,51 +25,51 @@ class MealInfoModel {
 }
 
 class Meals {
-  String? idMeal;
-  String? strMeal;
+  dynamic? idMeal;
+  dynamic? strMeal;
   dynamic? strDrinkAlternate;
-  String? strCategory;
-  String? strArea;
-  String? strInstructions;
-  String? strMealThumb;
-  String? strTags;
-  String? strYoutube;
-  String? strIngredient1;
-  String? strIngredient2;
-  String? strIngredient3;
-  String? strIngredient4;
-  String? strIngredient5;
-  String? strIngredient6;
-  String? strIngredient7;
-  String? strIngredient8;
-  String? strIngredient9;
-  String? strIngredient10;
-  String? strIngredient11;
-  String? strIngredient12;
-  String? strIngredient13;
-  String? strIngredient14;
-  String? strIngredient15;
-  dynamic? strIngredient16;
-  dynamic? strIngredient17;
-  dynamic? strIngredient18;
-  dynamic? strIngredient19;
-  dynamic? strIngredient20;
-  String? strMeasure1;
-  String? strMeasure2;
-  String? strMeasure3;
-  String? strMeasure4;
-  String? strMeasure5;
-  String? strMeasure6;
-  String? strMeasure7;
-  String? strMeasure8;
-  String? strMeasure9;
-  String? strMeasure10;
-  String? strMeasure11;
-  String? strMeasure12;
-  String? strMeasure13;
-  String? strMeasure14;
-  String? strMeasure15;
-  String? strMeasure16;
+  dynamic? strCategory;
+  dynamic? strArea;
+  dynamic? strInstructions;
+  dynamic? strMealThumb;
+  dynamic? strTags;
+  dynamic? strYoutube;
+  dynamic? dynamicredient1;
+  dynamic? dynamicredient2;
+  dynamic? dynamicredient3;
+  dynamic? dynamicredient4;
+  dynamic? dynamicredient5;
+  dynamic? dynamicredient6;
+  dynamic? dynamicredient7;
+  dynamic? dynamicredient8;
+  dynamic? dynamicredient9;
+  dynamic? dynamicredient10;
+  dynamic? dynamicredient11;
+  dynamic? dynamicredient12;
+  dynamic? dynamicredient13;
+  dynamic? dynamicredient14;
+  dynamic? dynamicredient15;
+  dynamic? dynamicredient16;
+  dynamic? dynamicredient17;
+  dynamic? dynamicredient18;
+  dynamic? dynamicredient19;
+  dynamic? dynamicredient20;
+  dynamic? strMeasure1;
+  dynamic? strMeasure2;
+  dynamic? strMeasure3;
+  dynamic? strMeasure4;
+  dynamic? strMeasure5;
+  dynamic? strMeasure6;
+  dynamic? strMeasure7;
+  dynamic? strMeasure8;
+  dynamic? strMeasure9;
+  dynamic? strMeasure10;
+  dynamic? strMeasure11;
+  dynamic? strMeasure12;
+  dynamic? strMeasure13;
+  dynamic? strMeasure14;
+  dynamic? strMeasure15;
+  dynamic? strMeasure16;
   dynamic? strMeasure17;
   dynamic? strMeasure18;
   dynamic? strMeasure19;
@@ -89,26 +89,26 @@ class Meals {
       strMealThumb,
       strTags,
       strYoutube,
-      strIngredient1,
-      strIngredient2,
-      strIngredient3,
-      strIngredient4,
-      strIngredient5,
-      strIngredient6,
-      strIngredient7,
-      strIngredient8,
-      strIngredient9,
-      strIngredient10,
-      strIngredient11,
-      strIngredient12,
-      strIngredient13,
-      strIngredient14,
-      strIngredient15,
-      strIngredient16,
-      strIngredient17,
-      strIngredient18,
-      strIngredient19,
-      strIngredient20,
+      dynamicredient1,
+      dynamicredient2,
+      dynamicredient3,
+      dynamicredient4,
+      dynamicredient5,
+      dynamicredient6,
+      dynamicredient7,
+      dynamicredient8,
+      dynamicredient9,
+      dynamicredient10,
+      dynamicredient11,
+      dynamicredient12,
+      dynamicredient13,
+      dynamicredient14,
+      dynamicredient15,
+      dynamicredient16,
+      dynamicredient17,
+      dynamicredient18,
+      dynamicredient19,
+      dynamicredient20,
       strMeasure1,
       strMeasure2,
       strMeasure3,
@@ -134,7 +134,7 @@ class Meals {
       strCreativeCommonsConfirmed,
       dateModified});
 
-  Meals.fromJson(Map<String, dynamic> json) {
+  Meals.fromJson(Map<dynamic, dynamic> json) {
     idMeal = json['idMeal'];
     strMeal = json['strMeal'];
     strDrinkAlternate = json['strDrinkAlternate'];
@@ -144,26 +144,26 @@ class Meals {
     strMealThumb = json['strMealThumb'];
     strTags = json['strTags'];
     strYoutube = json['strYoutube'];
-    strIngredient1 = json['strIngredient1'];
-    strIngredient2 = json['strIngredient2'];
-    strIngredient3 = json['strIngredient3'];
-    strIngredient4 = json['strIngredient4'];
-    strIngredient5 = json['strIngredient5'];
-    strIngredient6 = json['strIngredient6'];
-    strIngredient7 = json['strIngredient7'];
-    strIngredient8 = json['strIngredient8'];
-    strIngredient9 = json['strIngredient9'];
-    strIngredient10 = json['strIngredient10'];
-    strIngredient11 = json['strIngredient11'];
-    strIngredient12 = json['strIngredient12'];
-    strIngredient13 = json['strIngredient13'];
-    strIngredient14 = json['strIngredient14'];
-    strIngredient15 = json['strIngredient15'];
-    strIngredient16 = json['strIngredient16'];
-    strIngredient17 = json['strIngredient17'];
-    strIngredient18 = json['strIngredient18'];
-    strIngredient19 = json['strIngredient19'];
-    strIngredient20 = json['strIngredient20'];
+    dynamicredient1 = json['dynamicredient1'];
+    dynamicredient2 = json['dynamicredient2'];
+    dynamicredient3 = json['dynamicredient3'];
+    dynamicredient4 = json['dynamicredient4'];
+    dynamicredient5 = json['dynamicredient5'];
+    dynamicredient6 = json['dynamicredient6'];
+    dynamicredient7 = json['dynamicredient7'];
+    dynamicredient8 = json['dynamicredient8'];
+    dynamicredient9 = json['dynamicredient9'];
+    dynamicredient10 = json['dynamicredient10'];
+    dynamicredient11 = json['dynamicredient11'];
+    dynamicredient12 = json['dynamicredient12'];
+    dynamicredient13 = json['dynamicredient13'];
+    dynamicredient14 = json['dynamicredient14'];
+    dynamicredient15 = json['dynamicredient15'];
+    dynamicredient16 = json['dynamicredient16'];
+    dynamicredient17 = json['dynamicredient17'];
+    dynamicredient18 = json['dynamicredient18'];
+    dynamicredient19 = json['dynamicredient19'];
+    dynamicredient20 = json['dynamicredient20'];
     strMeasure1 = json['strMeasure1'];
     strMeasure2 = json['strMeasure2'];
     strMeasure3 = json['strMeasure3'];
@@ -190,8 +190,8 @@ class Meals {
     dateModified = json['dateModified'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  <String, dynamic>{};
+  Map<dynamic, dynamic> toJson() {
+    final Map<dynamic, dynamic> data =  <dynamic, dynamic>{};
     data['idMeal'] = idMeal;
     data['strMeal'] = strMeal;
     data['strDrinkAlternate'] = strDrinkAlternate;
@@ -201,26 +201,26 @@ class Meals {
     data['strMealThumb'] = strMealThumb;
     data['strTags'] = strTags;
     data['strYoutube'] = strYoutube;
-    data['strIngredient1'] = strIngredient1;
-    data['strIngredient2'] = strIngredient2;
-    data['strIngredient3'] = strIngredient3;
-    data['strIngredient4'] = strIngredient4;
-    data['strIngredient5'] = strIngredient5;
-    data['strIngredient6'] = strIngredient6;
-    data['strIngredient7'] = strIngredient7;
-    data['strIngredient8'] = strIngredient8;
-    data['strIngredient9'] = strIngredient9;
-    data['strIngredient10'] = strIngredient10;
-    data['strIngredient11'] = strIngredient11;
-    data['strIngredient12'] = strIngredient12;
-    data['strIngredient13'] = strIngredient13;
-    data['strIngredient14'] = strIngredient14;
-    data['strIngredient15'] = strIngredient15;
-    data['strIngredient16'] = strIngredient16;
-    data['strIngredient17'] = strIngredient17;
-    data['strIngredient18'] = strIngredient18;
-    data['strIngredient19'] = strIngredient19;
-    data['strIngredient20'] = strIngredient20;
+    data['dynamicredient1'] = dynamicredient1;
+    data['dynamicredient2'] = dynamicredient2;
+    data['dynamicredient3'] = dynamicredient3;
+    data['dynamicredient4'] = dynamicredient4;
+    data['dynamicredient5'] = dynamicredient5;
+    data['dynamicredient6'] = dynamicredient6;
+    data['dynamicredient7'] = dynamicredient7;
+    data['dynamicredient8'] = dynamicredient8;
+    data['dynamicredient9'] = dynamicredient9;
+    data['dynamicredient10'] = dynamicredient10;
+    data['dynamicredient11'] = dynamicredient11;
+    data['dynamicredient12'] = dynamicredient12;
+    data['dynamicredient13'] = dynamicredient13;
+    data['dynamicredient14'] = dynamicredient14;
+    data['dynamicredient15'] = dynamicredient15;
+    data['dynamicredient16'] = dynamicredient16;
+    data['dynamicredient17'] = dynamicredient17;
+    data['dynamicredient18'] = dynamicredient18;
+    data['dynamicredient19'] = dynamicredient19;
+    data['dynamicredient20'] = dynamicredient20;
     data['strMeasure1'] = strMeasure1;
     data['strMeasure2'] = strMeasure2;
     data['strMeasure3'] = strMeasure3;
