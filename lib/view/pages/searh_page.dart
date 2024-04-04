@@ -7,6 +7,7 @@ import 'package:recipevista/resource/images/app_images.dart';
 import 'package:recipevista/utils/reusable/arrow_icon.dart';
 import 'package:recipevista/utils/reusable/favourite_icon.dart';
 import 'package:recipevista/view/pages/filter_page.dart';
+import 'package:recipevista/view/pages/meal_info_view.dart';
 import 'package:recipevista/view_model/recipe/meals_info_view_model.dart';
 
 class SearchPage extends StatefulWidget {
@@ -127,74 +128,81 @@ class _SearchPageState extends State<SearchPage> {
                           shrinkWrap: true,
                           itemCount: mealsInfoValue.searchMealData.length,
                           itemBuilder: (context, index) {
-                            return Card(
-                              elevation: 0,
-                              color: Colors.transparent,
-                              child: Container(
-                                margin: EdgeInsets.only(bottom: height * 0.02,left: width * 0.02,right: width * 0.02),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular((width/Screen.designWidth)*20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.shade400,
-                                      spreadRadius: 2,
-                                      blurRadius: 2,
-                                    )
-                                  ]
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      height: height * 0.25,
-                                      width: width * 1,
-                                      decoration: BoxDecoration(
-                                        color: Colors.grey.shade300,
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular((width/Screen.designWidth)*20),
-                                          topRight: Radius.circular((width/Screen.designWidth)*20)
+                            return InkWell(
+                              onTap:(){
+                                mealsInfoViewModel.getMealInfo(context, mealsInfoValue.searchMealData[index].idMeal.toString()).whenComplete((){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const MealInfoView()));
+                                });
+                              },
+                              child: Card(
+                                elevation: 0,
+                                color: Colors.transparent,
+                                child: Container(
+                                  margin: EdgeInsets.only(bottom: height * 0.02,left: width * 0.02,right: width * 0.02),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular((width/Screen.designWidth)*20),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.shade400,
+                                        spreadRadius: 2,
+                                        blurRadius: 2,
+                                      )
+                                    ]
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        height: height * 0.25,
+                                        width: width * 1,
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey.shade300,
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular((width/Screen.designWidth)*20),
+                                            topRight: Radius.circular((width/Screen.designWidth)*20)
+                                          ),
+                                          image: DecorationImage(
+                                            image: NetworkImage(mealsInfoValue.searchMealData[index].strMealThumb.toString()),
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
-                                        image: DecorationImage(
-                                          image: NetworkImage(mealsInfoValue.searchMealData[index].strMealThumb.toString()),
-                                          fit: BoxFit.cover,
+                                        child: Padding(
+                                          padding: EdgeInsets.only(top: height * 0.02,right: width * 0.03),
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.end,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              const FavouriteIcon(),
+                                              SizedBox(width: width * 0.05,),
+                                              const ArrowIcon()
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                      child: Padding(
-                                        padding: EdgeInsets.only(top: height * 0.02,right: width * 0.03),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.end,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            const FavouriteIcon(),
-                                            SizedBox(width: width * 0.05,),
-                                            const ArrowIcon()
-                                          ],
+                                      Text(mealsInfoValue.searchMealData[index].strMeal.toString(),
+                                        style: GoogleFonts.aBeeZee(
+                                          fontSize: (width/Screen.designWidth)*30,
+                                          fontWeight : FontWeight.bold,
+                                          color: Colors.black,
                                         ),
                                       ),
-                                    ),
-                                    Text(mealsInfoValue.searchMealData[index].strMeal.toString(),
-                                      style: GoogleFonts.aBeeZee(
-                                        fontSize: (width/Screen.designWidth)*30,
-                                        fontWeight : FontWeight.bold,
-                                        color: Colors.black,
+                                      Text('Category: ${mealsInfoValue.searchMealData[index].strCategory.toString()}',
+                                        style: GoogleFonts.aBeeZee(
+                                          fontSize: (width/Screen.designWidth)*30,
+                                          fontWeight : FontWeight.w500,
+                                          color: Colors.black,
+                                        ),
                                       ),
-                                    ),
-                                    Text('Category: ${mealsInfoValue.searchMealData[index].strCategory.toString()}',
-                                      style: GoogleFonts.aBeeZee(
-                                        fontSize: (width/Screen.designWidth)*30,
-                                        fontWeight : FontWeight.w500,
-                                        color: Colors.black,
+                                      Text('Area: ${mealsInfoValue.searchMealData[index].strArea.toString()}',
+                                        style: GoogleFonts.aBeeZee(
+                                          fontSize: (width/Screen.designWidth)*30,
+                                          fontWeight : FontWeight.normal,
+                                          color: Colors.black,
+                                        ),
                                       ),
-                                    ),
-                                    Text('Area: ${mealsInfoValue.searchMealData[index].strArea.toString()}',
-                                      style: GoogleFonts.aBeeZee(
-                                        fontSize: (width/Screen.designWidth)*30,
-                                        fontWeight : FontWeight.normal,
-                                        color: Colors.black,
-                                      ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             );

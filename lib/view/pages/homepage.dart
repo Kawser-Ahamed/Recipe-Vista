@@ -41,11 +41,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
       canPop: false,
       child: Scaffold(
         backgroundColor: AppColor.backgroundColor,
-        appBar: AppBar(
-          elevation: 0.0,
-          backgroundColor: Colors.transparent,
-          leading: Icon(Icons.food_bank_outlined,color: AppColor.primaryColor),
-        ),
         body: FadeTransition(
           opacity: animation,
           child: Container(
@@ -59,6 +54,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      SizedBox(height: height * 0.05),
+                      Text("RecipeVista",
+                        style: GoogleFonts.aBeeZee(
+                          fontSize: (width/Screen.designWidth) * 40,
+                          fontWeight : FontWeight.bold,
+                          color: AppColor.primaryColor,
+                        ),
+                      ),
+                      SizedBox(height: height * 0.02),
                       const Country(),
                       Text("What Would you Like 2 Cook",
                         style: GoogleFonts.aBeeZee(
