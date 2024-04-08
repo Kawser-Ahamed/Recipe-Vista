@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:recipevista/view/splash_screen.dart';
 import 'package:recipevista/view_model/category/categories_view_model.dart';
+import 'package:recipevista/view_model/database/sqlite_database.dart';
+import 'package:recipevista/view_model/recipe/categories_recipe_view_model.dart';
 import 'package:recipevista/view_model/recipe/country_recipe_view_model.dart';
 import 'package:recipevista/view_model/recipe/meals_info_view_model.dart';
 import 'package:recipevista/view_model/recipe/meals_view_model.dart';
@@ -26,6 +28,8 @@ class RecipeVista extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => MealsViewModel()),
         ChangeNotifierProvider(create: (context) => MealsInfoViewModel()),
         ChangeNotifierProvider(create: (context) => CountryRecipeViewModel()),
+        ChangeNotifierProvider(create: (context) => CategoriesRecipeViewModel()),
+        ChangeNotifierProvider(create: (context) => SqliteDatabase()),
       ],
       child: MaterialApp(
         theme: ThemeData(

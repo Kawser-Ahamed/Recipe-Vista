@@ -17,7 +17,7 @@ class _CountryState extends State<Country> {
   Widget build(BuildContext context) {
     double height = Screen.screenHeight(context);
     double width = Screen.screenWidth(context);
-    final countryRecipeViewModel = Provider.of<CountryRecipeViewModel>(context);
+    final countryRecipeViewModel = Provider.of<CountryRecipeViewModel>(context,listen: false);
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(

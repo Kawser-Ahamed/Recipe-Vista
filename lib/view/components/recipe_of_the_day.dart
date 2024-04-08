@@ -14,7 +14,7 @@ class RecipeOfTheDay extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = Screen.screenHeight(context);
     double width = Screen.screenWidth(context);
-    final mealInfoViewModel = Provider.of<MealsInfoViewModel>(context);
+    final mealInfoViewModel = Provider.of<MealsInfoViewModel>(context,listen: false);
     return Consumer<RecipeOfThedayViewModel>(
       builder: (context, recipeOfThedayViewModel, child) {
         return InkWell(
@@ -53,7 +53,7 @@ class RecipeOfTheDay extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          const FavouriteIcon(),
+                          FavouriteIcon(idMeal: recipeOfThedayViewModel.randomRecipeData.first.idMeal.toString()),
                           SizedBox(width: width * 0.03),
                           const ArrowIcon(),
                         ],

@@ -190,8 +190,8 @@ class Meals {
     dateModified = json['dateModified'];
   }
 
-  Map<dynamic, dynamic> toJson() {
-    final Map<dynamic, dynamic> data =  <dynamic, dynamic>{};
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data =  <String, dynamic>{};
     data['idMeal'] = idMeal;
     data['strMeal'] = strMeal;
     data['strDrinkAlternate'] = strDrinkAlternate;

@@ -26,7 +26,7 @@ class Meals {
   String? strMealThumb;
   String? idMeal;
 
-  Meals({strMeal, strMealThumb, idMeal});
+  Meals({this.strMeal, this.strMealThumb, this.idMeal});
 
   Meals.fromJson(Map<String, dynamic> json) {
     strMeal = json['strMeal'];

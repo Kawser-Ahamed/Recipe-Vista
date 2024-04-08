@@ -172,7 +172,7 @@ class _FilterPageState extends State<FilterPage> {
                                             mainAxisAlignment: MainAxisAlignment.end,
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              const FavouriteIcon(),
+                                              FavouriteIcon(idMeal:mealsInfoValue.filterMealData[index].idMeal.toString()),
                                               SizedBox(width: width * 0.05,),
                                               const ArrowIcon()
                                             ],

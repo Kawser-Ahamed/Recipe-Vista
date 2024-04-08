@@ -7,6 +7,7 @@ import 'package:recipevista/resource/color/app_color.dart';
 import 'package:recipevista/resource/images/app_images.dart';
 import 'package:recipevista/view/pages/homepage.dart';
 import 'package:recipevista/view_model/category/categories_view_model.dart';
+import 'package:recipevista/view_model/database/sqlite_database.dart';
 import 'package:recipevista/view_model/recipe/recipe_of_the_day_view_model.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,11 +22,15 @@ class _SplashScreenState extends State<SplashScreen> {
   bool isLoading = true;
   @override
   void initState() {
-    Provider.of<RecipeOfThedayViewModel>(context,listen: false).getRandomRecipe(context).whenComplete((){
-      Provider.of<CategoriesViewModel>(context,listen: false).getCategories().whenComplete((){
-        isLoading = false;
-        setState(() {
-          
+    Provider.of<SqliteDatabase>(context,listen: false).initializedDatabase().whenComplete((){
+      Provider.of<SqliteDatabase>(context,listen: false).getMyFavouriteData().whenComplete((){
+        Provider.of<RecipeOfThedayViewModel>(context,listen: false).getRandomRecipe(context).whenComplete((){
+          Provider.of<CategoriesViewModel>(context,listen: false).getCategories().whenComplete((){
+            isLoading = false;
+            setState(() {
+              
+            });
+          });
         });
       });
     });

@@ -8,6 +8,7 @@ import 'package:recipevista/view/components/country.dart';
 import 'package:recipevista/view/components/meals_view.dart';
 import 'package:recipevista/view/components/recipe_of_the_day.dart';
 import 'package:recipevista/view/pages/filter_page.dart';
+import 'package:recipevista/view/pages/my_favourite.dart';
 import 'package:recipevista/view/pages/searh_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -48,13 +49,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
             width: width * 1,
             color: Colors.transparent,
             margin: EdgeInsets.only(left: width * 0.03),
-            child: CustomScrollView(
-              slivers: [
-                SliverToBoxAdapter(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            child: Column(
+              children: [
+                SizedBox(height: height * 0.05),
+                Padding(
+                  padding: EdgeInsets.only(right: width * 0.03),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(height: height * 0.05),
                       Text("RecipeVista",
                         style: GoogleFonts.aBeeZee(
                           fontSize: (width/Screen.designWidth) * 40,
@@ -62,119 +64,138 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                           color: AppColor.primaryColor,
                         ),
                       ),
-                      SizedBox(height: height * 0.02),
-                      const Country(),
-                      Text("What Would you Like 2 Cook",
-                        style: GoogleFonts.aBeeZee(
-                          fontSize: (width/Screen.designWidth)*50,
-                          color: Colors.black,
-                          fontWeight : FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: height * 0.01),
                       InkWell(
                         onTap:(){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const SearchPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const MyFavourite()));
                         },
-                        child: Card(
-                          color: Colors.transparent,
-                          elevation: 0,
-                          child: Container(
-                            margin: EdgeInsets.only(right: width * 0.03),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular((width/Screen.designWidth)*100),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.shade300,
-                                  blurRadius: 2,
-                                  spreadRadius: 2,
-                                )
-                              ]
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: width * 0.03,vertical: height * 0.015),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.search,size: (width/Screen.designWidth)*50,color: Colors.black),
-                                  SizedBox(width: width * 0.03),
-                                  Expanded(
-                                    flex: 2,
-                                    child: Text("Search for your query",
-                                      overflow: TextOverflow.ellipsis,
-                                      style: GoogleFonts.aBeeZee(
-                                        fontSize: (width/Screen.designWidth)*30,
-                                        color: Colors.black,
-                                        fontWeight : FontWeight.normal,
-                                      ),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    onTap:(){
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const FilterPage()));
-                                    },
-                                    child: Container(
-                                      height: height * 0.05,
-                                      width: height * 0.05,
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        shape: BoxShape.circle,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.shade200,
-                                            blurRadius: 2,
-                                            spreadRadius: 2,
-                                          )
-                                        ],
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsets.all(width * 0.02),
-                                        child: FittedBox(
-                                          child: Image.asset(AppImages.filter),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(width: width * 0.03),
-                                ],
+                        child: Icon(Icons.favorite_outlined,color: Colors.pink,size: (width/Screen.designWidth)*60)
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: CustomScrollView(
+                    slivers: [
+                      SliverToBoxAdapter(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [                          
+                            SizedBox(height: height * 0.02),
+                            const Country(),
+                            Text("What Would you Like 2 Cook",
+                              style: GoogleFonts.aBeeZee(
+                                fontSize: (width/Screen.designWidth)*50,
+                                color: Colors.black,
+                                fontWeight : FontWeight.bold,
                               ),
                             ),
-                          ),
+                            SizedBox(height: height * 0.01),
+                            InkWell(
+                              onTap:(){
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const SearchPage()));
+                              },
+                              child: Card(
+                                color: Colors.transparent,
+                                elevation: 0,
+                                child: Container(
+                                  margin: EdgeInsets.only(right: width * 0.03),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular((width/Screen.designWidth)*100),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.shade300,
+                                        blurRadius: 2,
+                                        spreadRadius: 2,
+                                      )
+                                    ]
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.symmetric(horizontal: width * 0.03,vertical: height * 0.015),
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.search,size: (width/Screen.designWidth)*50,color: Colors.black),
+                                        SizedBox(width: width * 0.03),
+                                        Expanded(
+                                          flex: 2,
+                                          child: Text("Search for your query",
+                                            overflow: TextOverflow.ellipsis,
+                                            style: GoogleFonts.aBeeZee(
+                                              fontSize: (width/Screen.designWidth)*30,
+                                              color: Colors.black,
+                                              fontWeight : FontWeight.normal,
+                                            ),
+                                          ),
+                                        ),
+                                        InkWell(
+                                          onTap:(){
+                                            Navigator.push(context, MaterialPageRoute(builder: (context) => const FilterPage()));
+                                          },
+                                          child: Container(
+                                            height: height * 0.05,
+                                            width: height * 0.05,
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              shape: BoxShape.circle,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.grey.shade200,
+                                                  blurRadius: 2,
+                                                  spreadRadius: 2,
+                                                )
+                                              ],
+                                            ),
+                                            child: Padding(
+                                              padding: EdgeInsets.all(width * 0.02),
+                                              child: FittedBox(
+                                                child: Image.asset(AppImages.filter),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(width: width * 0.03),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: height * 0.02),
+                            Text("Recipe Of The day",
+                              overflow: TextOverflow.ellipsis,
+                              style: GoogleFonts.aBeeZee(
+                                fontSize: (width/Screen.designWidth)*40,
+                                color: Colors.black,
+                                fontWeight : FontWeight.bold,
+                              ),
+                            ),
+                            const RecipeOfTheDay(),
+                            SizedBox(height: height * 0.02),
+                            Text("Recipe Category",
+                              style: GoogleFonts.aBeeZee(
+                                fontSize: (width/Screen.designWidth)*40,
+                                color: Colors.black,
+                                fontWeight : FontWeight.bold,
+                              ),
+                            ),
+                            const CategoriesView(),
+                            SizedBox(height: height * 0.02),
+                            Text("Just For You",
+                              style: GoogleFonts.aBeeZee(
+                                fontSize: (width/Screen.designWidth)*40,
+                                color: Colors.black,
+                                fontWeight : FontWeight.bold,
+                              ),
+                            ),
+                            const MealsView(),
+                          ],
                         ),
                       ),
-                      SizedBox(height: height * 0.02),
-                      Text("Recipe Of The day",
-                        overflow: TextOverflow.ellipsis,
-                        style: GoogleFonts.aBeeZee(
-                          fontSize: (width/Screen.designWidth)*40,
-                          color: Colors.black,
-                          fontWeight : FontWeight.bold,
-                        ),
-                      ),
-                      const RecipeOfTheDay(),
-                      SizedBox(height: height * 0.02),
-                      Text("Recipe Category",
-                        style: GoogleFonts.aBeeZee(
-                          fontSize: (width/Screen.designWidth)*40,
-                          color: Colors.black,
-                          fontWeight : FontWeight.bold,
-                        ),
-                      ),
-                      const CategoriesView(),
-                      SizedBox(height: height * 0.02),
-                      Text("Just For You",
-                        style: GoogleFonts.aBeeZee(
-                          fontSize: (width/Screen.designWidth)*40,
-                          color: Colors.black,
-                          fontWeight : FontWeight.bold,
-                        ),
-                      ),
-                      const MealsView(),
                     ],
                   ),
                 ),
               ],
-            ),
+            )
           ),
         )
       ),

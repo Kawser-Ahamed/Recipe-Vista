@@ -7,23 +7,23 @@ import 'package:recipevista/utils/reusable/arrow_icon.dart';
 import 'package:recipevista/utils/reusable/favourite_icon.dart';
 import 'package:recipevista/view/pages/meal_info_view.dart';
 import 'package:recipevista/view/pages/searh_page.dart';
-import 'package:recipevista/view_model/recipe/country_recipe_view_model.dart';
+import 'package:recipevista/view_model/recipe/categories_recipe_view_model.dart';
 import 'package:recipevista/view_model/recipe/meals_info_view_model.dart';
 
-class CountryRecipeView extends StatefulWidget {
-  const CountryRecipeView({super.key});
+class CategoriesRecipe extends StatefulWidget {
+  const CategoriesRecipe({super.key});
 
   @override
-  State<CountryRecipeView> createState() => _CountryRecipeViewState();
+  State<CategoriesRecipe> createState() => _CategoriesRecipeState();
 }
 
-class _CountryRecipeViewState extends State<CountryRecipeView> {
+class _CategoriesRecipeState extends State<CategoriesRecipe> {
   @override
   Widget build(BuildContext context) {
     double height = Screen.screenHeight(context);
     double width = Screen.screenWidth(context);
-    final countryRecipeViewModel = Provider.of<CountryRecipeViewModel>(context,listen: false);
-    final mealsInfoViewModel = Provider.of<MealsInfoViewModel>(context,listen: false);
+    final categoriesRecipeViewModel = Provider.of<CategoriesRecipeViewModel>(context,listen: false);
+    final mealInfoViewModel = Provider.of<MealsInfoViewModel>(context,listen: false);
     return Scaffold(
       body: Container(
         height: height,
@@ -46,7 +46,7 @@ class _CountryRecipeViewState extends State<CountryRecipeView> {
                       },
                       child: Icon(Icons.arrow_back,size: (width/Screen.designWidth)*50,color: Colors.black)
                     ),
-                    Text(countryRecipeViewModel.countryName,
+                    Text(categoriesRecipeViewModel.categoriesName.toString(),
                       style: GoogleFonts.aBeeZee(
                         fontSize: (width/Screen.designWidth) * 35,
                         color: AppColor.primaryColor,
@@ -66,11 +66,11 @@ class _CountryRecipeViewState extends State<CountryRecipeView> {
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: countryRecipeViewModel.countryRecipeData.length,
+                itemCount: categoriesRecipeViewModel.categoriesRecipeData.length,
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: (){
-                      mealsInfoViewModel.getMealInfo(context,countryRecipeViewModel.countryRecipeData[index].idMeal.toString()).whenComplete((){
+                      mealInfoViewModel.getMealInfo(context,categoriesRecipeViewModel.categoriesRecipeData[index].idMeal.toString()).whenComplete((){
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const MealInfoView()));
                       });
                     },
@@ -100,7 +100,7 @@ class _CountryRecipeViewState extends State<CountryRecipeView> {
                                 color: Colors.grey.shade300,
                                 borderRadius: BorderRadius.all(Radius.circular((width/Screen.designWidth)*20)),
                                 image: DecorationImage(
-                                  image: NetworkImage(countryRecipeViewModel.countryRecipeData[index].strMealThumb.toString()),
+                                  image: NetworkImage(categoriesRecipeViewModel.categoriesRecipeData[index].strMealThumb.toString()),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -113,7 +113,7 @@ class _CountryRecipeViewState extends State<CountryRecipeView> {
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        FavouriteIcon(idMeal: countryRecipeViewModel.countryRecipeData[index].idMeal.toString()),
+                                        FavouriteIcon(idMeal: categoriesRecipeViewModel.categoriesRecipeData[index].idMeal.toString(),),
                                         SizedBox(width: width * 0.05,),
                                         const ArrowIcon()
                                       ],
@@ -123,7 +123,7 @@ class _CountryRecipeViewState extends State<CountryRecipeView> {
                                       borderRadius: BorderRadius.circular((width/Screen.designWidth)*50),
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(horizontal: width * 0.03,vertical: height * 0.005),
-                                        child: Text(countryRecipeViewModel.countryRecipeData[index].strMeal.toString(),
+                                        child: Text(categoriesRecipeViewModel.categoriesRecipeData[index].strMeal.toString(),
                                           textAlign: TextAlign.center,
                                           style: GoogleFonts.aBeeZee(
                                             fontSize: (width/Screen.designWidth)*30,
@@ -147,7 +147,7 @@ class _CountryRecipeViewState extends State<CountryRecipeView> {
             ),
           ],
         ),
-      )
+      ),
     );
   }
 }

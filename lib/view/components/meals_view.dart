@@ -25,71 +25,75 @@ class _MealsViewState extends State<MealsView> {
   Widget build(BuildContext context) {
     double height = Screen.screenHeight(context);
     double width = Screen.screenWidth(context);
-    final mealInfoViewModel = Provider.of<MealsInfoViewModel>(context);
+    final mealInfoViewModel = Provider.of<MealsInfoViewModel>(context,listen: false);
     return FutureBuilder(
       future: Provider.of<MealsViewModel>(context,listen: false).getMealsData(appUrls.justForYou), 
       builder: (context, snapshot) {
         if(snapshot.hasData){
-          return GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), 
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: snapshot.data!.length,
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap:(){
-                  mealInfoViewModel.getMealInfo(context, snapshot.data![index].idMeal.toString()).whenComplete((){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const MealInfoView()));
-                  });
-                },
-                child: Card(
-                  elevation: 0,
-                  color: Colors.white,
-                  child: Container(
-                    decoration: BoxDecoration(
+          return Consumer<MealsViewModel>(
+            builder: (context, value, child) {
+              return GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), 
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: snapshot.data!.length,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap:(){
+                      mealInfoViewModel.getMealInfo(context, snapshot.data![index].idMeal.toString()).whenComplete((){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const MealInfoView()));
+                      });
+                    },
+                    child: Card(
+                      elevation: 0,
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular((width/Screen.designWidth)*20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.shade300,
-                          blurRadius: 2,
-                          spreadRadius: 2,
-                        ),
-                      ],
-                      image: DecorationImage(
-                        image: NetworkImage(snapshot.data![index].strMealThumb.toString()),
-                      ),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Card(
-                          color: AppColor.secondaryColor,
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: width * 0.02,vertical: height * 0.01),
-                            child: Text(snapshot.data![index].strMeal.toString(),
-                            textAlign: TextAlign.center,
-                            maxLines: 1,
-                              style: GoogleFonts.aBeeZee(
-                                fontSize: (width/Screen.designWidth)*20,
-                                color: Colors.white,
-                              ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular((width/Screen.designWidth)*20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade300,
+                              blurRadius: 2,
+                              spreadRadius: 2,
                             ),
+                          ],
+                          image: DecorationImage(
+                            image: NetworkImage(snapshot.data![index].strMealThumb.toString()),
                           ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            const FavouriteIcon(),
-                            SizedBox(width: width * 0.05),
-                            const ArrowIcon(),
+                            Card(
+                              color: AppColor.secondaryColor,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: width * 0.02,vertical: height * 0.01),
+                                child: Text(snapshot.data![index].strMeal.toString(),
+                                textAlign: TextAlign.center,
+                                maxLines: 1,
+                                  style: GoogleFonts.aBeeZee(
+                                    fontSize: (width/Screen.designWidth)*20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                FavouriteIcon(idMeal: snapshot.data![index].idMeal.toString()),
+                                SizedBox(width: width * 0.05),
+                                const ArrowIcon(),
+                              ],
+                            ),
+                            SizedBox(height: height * 0.01),
                           ],
                         ),
-                        SizedBox(height: height * 0.01),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
+                  );
+                },
               );
             },
           );

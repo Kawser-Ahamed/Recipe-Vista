@@ -5,5 +5,6 @@ class AppUrls{
   String searchUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
   String filterByCharacter = 'https://www.themealdb.com/api/json/v1/1/search.php?f=';
   String mealInfoUrl = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
+  String categoriesRecipe = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=';
   String countryRecipeUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=';
 }

@@ -173,9 +173,9 @@ class _SearchPageState extends State<SearchPage> {
                                             mainAxisAlignment: MainAxisAlignment.end,
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              const FavouriteIcon(),
+                                              FavouriteIcon(idMeal: mealsInfoValue.searchMealData[index].idMeal.toString(),),
                                               SizedBox(width: width * 0.05,),
-                                              const ArrowIcon()
+                                              const ArrowIcon(),
                                             ],
                                           ),
                                         ),

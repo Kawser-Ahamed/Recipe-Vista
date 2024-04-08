@@ -7,6 +7,7 @@ import 'package:recipevista/model/recipe/meals_info_model.dart';
 import 'package:recipevista/resource/color/app_color.dart';
 import 'package:recipevista/resource/images/app_images.dart';
 import 'package:recipevista/view_model/recipe/meals_info_view_model.dart';
+import 'package:recipevista/view_model/database/sqlite_database.dart';
 
 class MealInfoView extends StatefulWidget {
   const MealInfoView({super.key});
@@ -21,7 +22,8 @@ class _MealInfoViewState extends State<MealInfoView> with TickerProviderStateMix
   Widget build(BuildContext context) {
     double height = Screen.screenHeight(context);
     double width = Screen.screenWidth(context);
-    final mealInfoViewModel = Provider.of<MealsInfoViewModel>(context);
+    final mealInfoViewModel = Provider.of<MealsInfoViewModel>(context,listen: false);
+    final sqliteDatabase = Provider.of<SqliteDatabase>(context,listen: false);
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
@@ -68,24 +70,38 @@ class _MealInfoViewState extends State<MealInfoView> with TickerProviderStateMix
                           ),
                         ),
                       ),
-                      Container(
-                        height: height * 0.05,
-                        width: height * 0.05,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.shade500,
-                              blurRadius: 2,
-                              spreadRadius: 2,
+                      InkWell(
+                        onTap: (){
+                          if(sqliteDatabase.myFavouriteDataMap[mealInfoViewModel.mealInfoData.first.idMeal.toString()]==true){
+                            sqliteDatabase.deleteMyFavourite(mealInfoViewModel.mealInfoData.first.idMeal.toString());
+                          }
+                          else{
+                            sqliteDatabase.makeJson(mealInfoViewModel.mealInfoData.first.idMeal, mealInfoViewModel.mealInfoData.first.strMeal, mealInfoViewModel.mealInfoData.first.strMealThumb,context);
+                          }
+                        },
+                        child: Container(
+                          height: height * 0.05,
+                          width: height * 0.05,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.shade500,
+                                blurRadius: 2,
+                                spreadRadius: 2,
+                              ),
+                            ],
+                          ),
+                          child: FittedBox(
+                            child: Padding(
+                              padding: EdgeInsets.all(width * 0.01),
+                              child: Consumer<SqliteDatabase>(
+                                builder: (context, value, child) {
+                                  return Icon((value.myFavouriteDataMap.containsKey(mealInfoViewModel.mealInfoData.first.idMeal) ? Icons.favorite : Icons.favorite_outline),size: (width/Screen.designWidth)*60,color: Colors.pink);
+                                },
+                              ),
                             ),
-                          ],
-                        ),
-                        child: FittedBox(
-                          child: Padding(
-                            padding: EdgeInsets.all(width * 0.01),
-                            child: Icon(Icons.favorite_outline,size: (width/Screen.designWidth)*60,color: Colors.pink),
                           ),
                         ),
                       ),
@@ -161,63 +177,59 @@ class _MealInfoViewState extends State<MealInfoView> with TickerProviderStateMix
                                 ),
                               ],
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Expanded(
-                                  flex: 1,
-                                  child: ListView.builder(
-                                    shrinkWrap: true,
-                                    physics: const NeverScrollableScrollPhysics(),
-                                    itemCount: 19,
-                                    itemBuilder: (context, index) {
-                                      Meals meal = mealInfoViewModel.mealInfoData.first;
-                                      return (meal['strIngredient${index+1}'].toString().isNotEmpty && meal['strIngredient${index+1}'] != null) 
-                                      ? Row(
-                                        children: [
-                                          Icon(Icons.circle,color: AppColor.secondaryColor,size: (width/Screen.designWidth)*20),
-                                          SizedBox(width: width * 0.03),
-                                          Expanded(
-                                            child: Text(meal['strIngredient${index+1}'],
-                                              style: TextStyle(
-                                                fontSize: (width/Screen.designWidth) * 30,
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
+                            ListView.builder(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemCount: 19,
+                              itemBuilder: (context, index) {
+                                Meals meal = mealInfoViewModel.mealInfoData.first;
+                                return (meal['strIngredient${index+1}'].toString().isNotEmpty && meal['strIngredient${index+1}'] != null) ? 
+                                Card(
+                                  elevation: 0,
+                                  color: Colors.transparent,
+                                  margin: const EdgeInsets.all(0),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                        child: Row(
+                                          children: [
+                                            Icon(Icons.circle,color: AppColor.secondaryColor,size: (width/Screen.designWidth)*20),
+                                            SizedBox(width: width * 0.03),
+                                            Expanded(
+                                              child: Text(meal['strIngredient${index+1}'],
+                                                style: TextStyle(
+                                                  fontSize: (width/Screen.designWidth) * 30,
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      ) : const SizedBox();
-                                    },
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: ListView.builder(
-                                    shrinkWrap: true,
-                                    physics: const NeverScrollableScrollPhysics(),
-                                    itemCount: 19,
-                                    itemBuilder: (context, index) {
-                                      Meals meal = mealInfoViewModel.mealInfoData.first;
-                                      return (meal['strIngredient${index+1}'].toString().isNotEmpty && meal['strIngredient${index+1}'] != null) ? Row(
-                                        children: [
-                                          Icon(Icons.circle,color: AppColor.secondaryColor,size: (width/Screen.designWidth)*20),
-                                          SizedBox(width: width * 0.03),
-                                          Expanded(
-                                            child: Text(meal['strMeasure${index+1}'],
-                                              style: TextStyle(
-                                                fontSize: (width/Screen.designWidth) * 30,
-                                                color: Colors.black,
-                                                fontWeight: FontWeight.bold,
+                                          ],
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Row(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(Icons.circle,color: AppColor.secondaryColor,size: (width/Screen.designWidth)*20),
+                                            SizedBox(width: width * 0.03),
+                                            Expanded(
+                                              child: Text(meal['strMeasure${index+1}'],
+                                              textAlign: TextAlign.start,
+                                                style: TextStyle(
+                                                  fontSize: (width/Screen.designWidth) * 30,
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      ) : const SizedBox();
-                                    },
-                                  ),
-                                ),
-                              ],
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ) : const SizedBox();
+                              },
                             ),
                             SizedBox(height: height * 0.02),
                             Text("Instruction",
