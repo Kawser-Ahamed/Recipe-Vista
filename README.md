@@ -65,13 +65,16 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 <!-- About the Project -->
 ## :star2: About the Project
-
+<p>
+  This is a mobile application. Which build with dart,flutter,rest api and SQLite local database. In this app i used MVVM 
+  architecture and provider state management.
+</p>
 
 <!-- Screenshots -->
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
+  <img src="https://drive.google.com/file/d/1X1LxmwNeQE4kYKEiCXn8cFooNsl1SlvJ/view?usp=drive_link" alt="screenshot" />
 </div>
 
 
