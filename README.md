@@ -74,7 +74,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://drive.google.com/file/d/1X1LxmwNeQE4kYKEiCXn8cFooNsl1SlvJ/view?usp=drive_link" />
+  <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg" />
 </div>
 
 
