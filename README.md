@@ -92,7 +92,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="[https://www.typescriptlang.org/](https://www.themealdb.com/)">The Meal DB Rest Api</a></li>
+    <li><a href="https://www.themealdb.com/">The Meal DB Rest Api</a></li>
   </ul>
 </details>
 
