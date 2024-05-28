@@ -151,7 +151,9 @@ Install my-project in your mobile app
 ### :test_tube: Running Tests
 
 To run tests, run the following command
-
+```bash
+  flutter doctor
+```
 ```bash
   flutter test
 ```
