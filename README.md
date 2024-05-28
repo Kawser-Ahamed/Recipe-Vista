@@ -50,12 +50,9 @@ Maybe you can mention me or this repo in the acknowledgements too
   * [Color Reference](#art-color-reference)
   * [Environment Variables](#key-environment-variables)
 - [Getting Started](#toolbox-getting-started)
-  * [Prerequisites](#bangbang-prerequisites)
   * [Installation](#gear-installation)
   * [Running Tests](#test_tube-running-tests)
   * [Run Locally](#running-run-locally)
-  * [Deployment](#triangular_flag_on_post-deployment)
-- [Usage](#eyes-usage)
 - [Roadmap](#compass-roadmap)
 - [Contributing](#wave-contributing)
   * [Code of Conduct](#scroll-code-of-conduct)
@@ -226,4 +223,4 @@ Project Link: [Recipe Vista](https://github.com/Kawser-Ahamed/Recipe-Vista)
 
 Use this section to mention useful resources and libraries that you have used in your projects.
 
- - [The Meal DB]([https://shields.io/](https://www.themealdb.com/))
+ - [The Meal DB](https://www.themealdb.com/)
