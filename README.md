@@ -116,7 +116,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
 | Primary Color | ![#FECE51](https://via.placeholder.com/10/222831?text=+) #FECE51 |
-| Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
+| Secondary Color | ![#05C1BD](https://via.placeholder.com/10/393E46?text=+) #05C1BD |
 | Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
 
 
