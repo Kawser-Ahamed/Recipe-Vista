@@ -153,11 +153,6 @@ To run tests, run the following command
 
 To run this app on emulator 
 
-```bash
-  flutter pub get
-  flutter run
-```
-
 Go to the project directory
 
 ```bash
@@ -167,13 +162,13 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  yarn install
+  flutter pub get
 ```
 
-Start the server
+Start the app
 
 ```bash
-  yarn start
+  flutter run
 ```
 
 
