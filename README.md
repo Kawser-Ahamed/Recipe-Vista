@@ -125,9 +125,9 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 To run this project, you will need to add the following environment variables to your computer
 
-`API_KEY`
+`The root directory of your Flutter SDK`
 
-`ANOTHER_API_KEY`
+`You need to add the bin directory inside the Flutter SDK to your system PATH so that you can run Flutter commands from any terminal.`
 
 
 <!-- Installation -->
