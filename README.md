@@ -114,6 +114,8 @@ Maybe you can mention me or this repo in the acknowledgements too
 - Country-Wise Food Recipes
 - Category-Wise Food Recipes
 - Recipe of the Day
+- Search recipes
+- filter recipes
 - Comprehensive Recipe Information
 - Add to Favourites
 - Modify Favourite Recipes
