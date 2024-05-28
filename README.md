@@ -74,7 +74,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/enhancer/2.jpg" />
+  <img src="https://drive.google.com/file/d/1X1LxmwNeQE4kYKEiCXn8cFooNsl1SlvJ/view?usp=drive_link" />
 </div>
 
 
