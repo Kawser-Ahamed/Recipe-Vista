@@ -74,9 +74,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://firebasestorage.googleapis.com/v0/b/test-2aece.appspot.com/o/recipe%20vista%2FCapture.PNG?alt=media&token=ad0af640-6bca-4f79-acf0-4ef22ff54da1" alt="Splash Screen" />
-</div>
-<div align="center>
+  <img style="margin-left: 10px" src="https://firebasestorage.googleapis.com/v0/b/test-2aece.appspot.com/o/recipe%20vista%2FCapture.PNG?alt=media&token=ad0af640-6bca-4f79-acf0-4ef22ff54da1" alt="Splash Screen" />
   <img src="https://firebasestorage.googleapis.com/v0/b/test-2aece.appspot.com/o/recipe%20vista%2FCapture2.PNG?alt=media&token=a4ee4667-0585-4df1-bf6d-441ab15c387f" alt="Homepage" />
    <img src="https://firebasestorage.googleapis.com/v0/b/test-2aece.appspot.com/o/recipe%20vista%2FCapture3.PNG?alt=media&token=95303f38-ea3b-433d-bedb-2bf6bf15b94a" alt="Category" />
   <img src="https://firebasestorage.googleapis.com/v0/b/test-2aece.appspot.com/o/recipe%20vista%2FCapture4.PNG?alt=media&token=514e7308-3f76-4b16-acea-7d74d01a8878" alt="Category Foods" />
