@@ -210,15 +210,15 @@ Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-te
 <!-- License -->
 ## :warning: License
 
-Distributed under the no License. See LICENSE.txt for more information.
+This project is licensed under the terms of Kawser Ahamed.
 
 
 <!-- Contact -->
 ## :handshake: Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [@facebook_handle](https://www.facebook.com/kawser.ahamed.farabi/) - kawserahamed864@gmail.com
 
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
+Project Link: [Recipe Vista](https://github.com/Kawser-Ahamed/Recipe-Vista)
 
 
 <!-- Acknowledgments -->
@@ -226,7 +226,4 @@ Project Link: [https://github.com/Louis3797/awesome-readme-template](https://git
 
 Use this section to mention useful resources and libraries that you have used in your projects.
 
- - [Shields.io](https://shields.io/)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
- - [Readme Template](https://github.com/othneildrew/Best-README-Template)
+ - [The Meal DB]([https://shields.io/](https://www.themealdb.com/))
