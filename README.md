@@ -151,10 +151,11 @@ To run tests, run the following command
 <!-- Run Locally -->
 ### :running: Run Locally
 
-Clone the project
+To run this app on emulator 
 
 ```bash
-  git clone https://github.com/Louis3797/awesome-readme-template.git
+  flutter pub get
+  flutter run
 ```
 
 Go to the project directory
