@@ -111,7 +111,9 @@ Maybe you can mention me or this repo in the acknowledgements too
 <!-- Features -->
 ### :dart: Features
 
-- Feature 1
+- Country-Wise Food Recipes
+   Explore a diverse range of food recipes organized by country, allowing users to easily discover and enjoy culinary 
+   traditions from around the world. 
 - Feature 2
 - Feature 3
 
