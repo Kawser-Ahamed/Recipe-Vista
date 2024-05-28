@@ -74,7 +74,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg" />
+  <img src="https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/enhancer/2.jpg" />
 </div>
 
 
