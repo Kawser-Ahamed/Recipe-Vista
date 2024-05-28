@@ -145,7 +145,7 @@ Install my-project in your mobile app
 To run tests, run the following command
 
 ```bash
-  yarn test test
+  flutter test
 ```
 
 <!-- Run Locally -->
@@ -156,7 +156,7 @@ To run this app on emulator
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd recipevista
 ```
 
 Install dependencies
@@ -170,32 +170,6 @@ Start the app
 ```bash
   flutter run
 ```
-
-
-<!-- Deployment -->
-### :triangular_flag_on_post: Deployment
-
-To deploy this project run
-
-```bash
-  yarn deploy
-```
-
-
-<!-- Usage -->
-## :eyes: Usage
-
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
-
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
-
 <!-- Roadmap -->
 ## :compass: Roadmap
 
@@ -224,13 +198,13 @@ Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-te
 <!-- FAQ -->
 ## :grey_question: FAQ
 
-- Question 1
+- Is this app run on physical device?
 
-  + Answer 1
+  + No. Currently it only runs on mobile emulators.
 
-- Question 2
+- Is this is the final version?
 
-  + Answer 2
+  + Yes.
 
 
 <!-- License -->
