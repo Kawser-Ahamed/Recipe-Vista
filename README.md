@@ -117,38 +117,26 @@ Maybe you can mention me or this repo in the acknowledgements too
 | ----------------- | ------------------------------------------------------------------ |
 | Primary Color | ![#FECE51](https://via.placeholder.com/10/222831?text=+) #FECE51 |
 | Secondary Color | ![#05C1BD](https://via.placeholder.com/10/393E46?text=+) #05C1BD |
-| Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
+| Background Color | ![#F1F2EC](https://via.placeholder.com/10/00ADB5?text=+) #F1F2EC |
 
 
 <!-- Env Variables -->
 ### :key: Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to your computer
 
 `API_KEY`
 
 `ANOTHER_API_KEY`
 
-<!-- Getting Started -->
-## 	:toolbox: Getting Started
-
-<!-- Prerequisites -->
-### :bangbang: Prerequisites
-
-This project uses Yarn as package manager
-
-```bash
- npm install --global yarn
-```
 
 <!-- Installation -->
 ### :gear: Installation
 
-Install my-project with npm
+Install my-project in your mobile app
 
 ```bash
-  yarn install my-project
-  cd my-project
+  https://drive.google.com/file/d/1Vvl8CPYFbcsH2Nq8K6iaAAeY65ws9pd7/view?usp=drive_link
 ```
    
 <!-- Running Tests -->
