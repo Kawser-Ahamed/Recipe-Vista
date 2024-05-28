@@ -74,7 +74,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://firebasestorage.googleapis.com/v0/b/test-2aece.appspot.com/o/recipe%20vista%2FCapture.PNG?alt=media&token=ad0af640-6bca-4f79-acf0-4ef22ff54da1" />
+  <img src="https://firebasestorage.googleapis.com/v0/b/test-2aece.appspot.com/o/recipe%20vista%2FCapture.PNG?alt=media&token=ad0af640-6bca-4f79-acf0-4ef22ff54da1" alt="Splash Screen"/>
 </div>
 
 
