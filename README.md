@@ -112,10 +112,11 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :dart: Features
 
 - Country-Wise Food Recipes
-   Explore a diverse range of food recipes organized by country, allowing users to easily discover and enjoy culinary 
-   traditions from around the world. 
-- Feature 2
-- Feature 3
+- Category-Wise Food Recipes
+- Recipe of the Day
+- Comprehensive Recipe Information
+- Add to Favourites
+- Modify Favourite Recipes
 
 <!-- Color Reference -->
 ### :art: Color Reference
